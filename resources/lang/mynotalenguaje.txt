@@ -1,0 +1,21 @@
+para agregar idioma a nuestro proyecto laravel,
+
+1- crear en la carpeta Lang\ una carpeta llamada es
+2- modificar nuestro archivo app.php que esta en app\config\
+3- modificar donde 'locale'=> 'es'.
+4- en la carpeta es creada, descargar desde internet el paquete creado para laravel Lang
+es, son catro archivos que pegamos en la carpeta es, validation.php , auth.php,pagination.php, y password.php
+5-luego crear un archivo es.json que se ubicara en la carpeta lang.
+6- si queremos agregar mensajes personalizados para nuestro fomulario lo agregamos en nuestro
+controlador del formulario, como segundoarray de validacion
+ej : request()->validate([
+    'name'=>'required'
+    'email'=>'required|email',
+],[
+    'name.required'=>'necesito tu nombre',
+    'email.required'=>'necesito tu email'
+])
+7- creamos tambien dentro de la carpeta lang un archivo llamado es.json que tambien lo descargamos desde internet
+y agregamos nuestras traducciones necesarias.
+8-las funciones de traduccion como   __('contact')  buscara dentro de nuestro
+archivo es.js tanto como @lang()
