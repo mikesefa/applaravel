@@ -14,18 +14,19 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
-            $table->timestamps();
+            $table->id();// autoincremental identificador del usuario
+            $table->string('name');//nombres
+            $table->string('phone')->nullable();
+            $table->string('email')->unique();//emails y unicos imails irrepetibles
+            $table->timestamp('email_verified_at')->nullable();//cuando el usuario modifico su email
+            $table->string('password');//password encriptado nunca texto plano
+            $table->rememberToken();//token de sesion de usuario para recordarte
+            $table->timestamps();//almacena fecha y hora de creacion y modificacion de un usuario.
         });
     }
 
     /**
-     * Reverse the migrations.
+     * Reverse the migrations.elimina todo lo hecho por la funcion up()
      *
      * @return void
      */

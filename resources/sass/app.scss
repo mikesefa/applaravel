@@ -1,0 +1,38 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+.h-screen {
+    height: 100vh;
+    color: white;
+    margin: 10px auto;
+}
+
+.p80 {
+    width: 75%;
+}
+
+.p70 {
+    width: 70%;
+}
+
+.h80 {
+    height: 80%;
+}
+
+#headerdown {
+    height: 80px;
+}
+
+.up {
+    margin-bottom: 100px;
+}
+
+.card-imagen {
+    object-fit: fill;
+}

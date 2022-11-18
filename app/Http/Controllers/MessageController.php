@@ -19,16 +19,18 @@ class MessageController extends Controller
 
         /* validacion del formulario paso 1 */
 
-        $msg=request()->validate([
+        $msg = request()->validate([
 
             'name' => 'required',
-            'email'=> 'required|email',
-            'subject'=>'required|min:3',
-            'content'=>'required|min:5',
+            'email' => 'required|email',
+            'subject' => 'required|min:3',
+            'content' => 'required|min:5',
 
-        ],[
-            'name.required'=>'necesito tu nombre CABEZA DE TERMO',
-            'email'=>'escribi bien tu email'
+        ], [
+            'name.required' => 'escribe tu nombre',
+            'email' => 'escribe un email válido',
+            'subject.required' => 'escribe un asunto',
+            'content.required' => 'escribe un mensaje'
         ]);
         //enviar el email
 
@@ -36,7 +38,7 @@ class MessageController extends Controller
 
 
         /* return  new MessageReceived($msg);  manera rapida de previsualizar el mensaje en el navegador*/
-        return "mensaje enviado con exito";
+        return back()->with('status', 'Mensaje enviado');/* redireccionar al mismo formulario */
     }
 };
 
